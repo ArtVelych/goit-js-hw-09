@@ -1,1 +1,1 @@
-{"version":3,"file":"commonHelpers3.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"commonHelpers3.js","sources":["../src/js/1-gallery.js"],"sourcesContent":["console.log('HELLO!');"],"names":[],"mappings":"ssBAAA,QAAQ,IAAI,QAAQ"}
