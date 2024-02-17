@@ -7,26 +7,24 @@ form.addEventListener('submit', submitFormData);
 // ====================== Event listener functions ======================
 
 function renderFormInput(e) {
-    const email = e.currentTarget.elements.email.value;
-    const message = e.currentTarget.elements.message.value;
+    const email = e.currentTarget.elements.email.value.trim();
+    const message = e.currentTarget.elements.message.value.trim();
 
-    if (email.trim() !== '' || message.trim() !== '') {
-        const dataToSave = {
-            email,
-            message
-        }
-
-        saveToLs(storageKey, dataToSave);
+    const dataToSave = {
+        email,
+        message
     }
+
+    saveToLs(storageKey, dataToSave);
 }
 
 function submitFormData(e) {
     e.preventDefault();
 
     const data = loadFromLs(storageKey) || {};
-    const { email, message } = data;
 
-    if (email && message) {
+    if (data.email && data.message) {
+        console.log(data);
         localStorage.removeItem(storageKey);
         form.reset();
     } else {
